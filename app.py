@@ -9,7 +9,7 @@ def clear_screen():
 
 def clean_data(players):
     updated_players = copy.deepcopy(players)
-    # split_guardians
+    # split guardians to list
     for player in updated_players:
         player['guardians'] = player['guardians'].split(' and ')
     # convert height format from str to int
@@ -98,7 +98,7 @@ def show_team_stat():
                 raise ValueError
             else:
                 selected_team = index_to_team(int(index), constants.TEAMS)
-                # merge inexperience players and experience players
+                # merge inexperienced players and experienced players
                 list_selected_team_and_players = dict_team_and_players_inexperienced[selected_team]\
                                                  + dict_team_and_players_experienced[selected_team]
                 # create stat
